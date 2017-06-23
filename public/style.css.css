@@ -1,0 +1,31 @@
+body {
+    font-family: "Helvetica Neue";
+    font-size: 14px; 
+    flex-wrap: wrap;
+    background-image: url("background_leaf.jpg");
+    background-size: 1265px 800px;
+    background-repeat: repeat;
+}
+
+.navbar {
+    position: fixed;
+    overflow: hidden;
+    padding: 0px 200px;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    text-align: left;
+    padding: 14px 30px;
+}
+
+.content{
+    position: fixed; /*top and bottom margins to avoid navbar overlay */
+    top: 80px;
+    bottom: 20px;
+    left: 20px;
+    padding: 0px 200px;
+    overflow-y: scroll;
+}

@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!--if page encounters any errors of any type(name), to look through each flash error/message in 'library' then
+  display the correct flash message that is in its own container (different styles under css styling i.e. red for error, green etc.-->
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
