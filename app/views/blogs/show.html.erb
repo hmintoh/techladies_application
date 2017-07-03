@@ -6,19 +6,13 @@
 </div>
 
 <div class="content">
-    <h2>Blog</h2>
-    <!--show all blog posts with ability to edit and delete each post-->
-    <% @blogs.each do |blog| %>
-        <p><strong>Title > </strong><%= blog.title %></p>
-        <p><strong>Content > </strong><%= blog.content %></p>
-        <%= link_to "Edit", blog_path(blog) %>
-        <%= link_to "Delete", blog_path(blog), method: :delete, :confirm => "Are you sure?" %>
-        <br>
-    <% end %>
+    <h2>Blog Post</h2>
+    <!--show blog post to edit-->
+        <p><strong>Title: </strong><%= @blog.title %></p>
+        <p><strong>Content: </strong><%= @blog.content %></p>
         
-    <h2>New Entry</h2>
-        <!--build form: form_for blog, link to blog-->
-        <%= form_for :blog, url: blogs_path do |form| %>
+    <h2>Edit Post</h2>
+        <%= form_for(@blog) do |form| %>
             <p>
             <%= form.label :Title %><br>
             <%= form.text_area :title, :cols => 80, :rows => 1 %>
@@ -30,5 +24,8 @@
             </p>
             
             <%= form.submit %>
-        <% end %>
+         <% end %>
+         
+        <%= link_to "Back", blogs_path %>
+        
 </div>
